@@ -5,6 +5,23 @@ import ast
 import sys
 import pprint
 
+'''
+Function specific check
+    Action - check return type
+    Action - check pstep/psubstep buddy with report_step/report_substep_status
+    check docstring
+    check print statement - should use print_utils
+Class specific check
+    Action - check private method, move to utils
+    check docstring
+    scan for class - recursive class check
+    scan for function - function specific check
+Top level check
+    license info
+    scan for class - class check
+    scan for function - function check
+'''
+
 f = open(sys.argv[1])
 root = ast.parse(f.read())
 for child in ast.iter_child_nodes(root):
